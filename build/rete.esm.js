@@ -832,7 +832,7 @@ function () {
     key: "down",
     value: function down(e) {
       // if ((e.pointerType === 'mouse') && (e.button !== 0)) return;
-      if (e.pointerType === 'mouse' && this.button !== 0) return;
+      if (e.pointerType === 'mouse' && e.button !== this.button) return;
       e.stopPropagation();
       this.pointerStart = [e.pageX, e.pageY];
       this.onStart(e);
