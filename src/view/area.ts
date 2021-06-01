@@ -27,7 +27,7 @@ export class Area extends Emitter<EventsTypes> {
         el.style.transformOrigin = '0 0';
 
         this._zoom = new Zoom(container, el, 0.1, this.onZoom.bind(this));
-        this._drag = new Drag(container, this.onTranslate.bind(this), this.onStart.bind(this));
+        this._drag = new Drag(container, 1, this.onTranslate.bind(this), this.onStart.bind(this));
 
         emitter.on('destroy', () => {
             this._zoom.destroy();

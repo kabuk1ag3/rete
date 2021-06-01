@@ -8,9 +8,10 @@ export class Drag {
 
     constructor(
         el: HTMLElement,
+        private button: number,
         private onTranslate = (_x: number, _y: number, _e: PointerEvent) => {},
         private onStart = (_e: PointerEvent) => {},
-        private onDrag = (_e: PointerEvent) => {}
+        private onDrag = (_e: PointerEvent) => {},
     ) {
         this.pointerStart = null;
         this.el = el;
@@ -25,7 +26,8 @@ export class Drag {
     }
 
     down(e: PointerEvent) {
-        if ((e.pointerType === 'mouse') && (e.button !== 0)) return;
+        // if ((e.pointerType === 'mouse') && (e.button !== 0)) return;
+        if ((e.pointerType === 'mouse') && (this.button !== 0)) return;
         e.stopPropagation();
         this.pointerStart = [e.pageX, e.pageY]
 

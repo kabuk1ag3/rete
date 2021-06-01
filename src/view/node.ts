@@ -29,7 +29,7 @@ export class NodeView extends Emitter<EventsTypes> {
 
         this.el.addEventListener('contextmenu', e => this.trigger('contextmenu', { e, node: this.node }));
 
-        this._drag = new Drag(this.el, this.onTranslate.bind(this), this.onSelect.bind(this), () => {
+        this._drag = new Drag(this.el, 0, this.onTranslate.bind(this), this.onSelect.bind(this), () => {
             this.trigger('nodedraged', node);
             this.trigger('nodedragged', node);
         });
