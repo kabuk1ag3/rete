@@ -1024,7 +1024,7 @@ function (_Emitter) {
     _this.container = container;
     el.style.transformOrigin = '0 0';
     _this._zoom = new Zoom(container, el, 0.1, _this.onZoom.bind(_assertThisInitialized(_this)));
-    _this._drag = new Drag(container, 1, _this.onTranslate.bind(_assertThisInitialized(_this)), _this.onStart.bind(_assertThisInitialized(_this)));
+    _this._drag = new Drag(container, 2, _this.onTranslate.bind(_assertThisInitialized(_this)), _this.onStart.bind(_assertThisInitialized(_this)));
     emitter.on('destroy', function () {
       _this._zoom.destroy();
 
